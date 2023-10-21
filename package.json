@@ -1,0 +1,23 @@
+{
+  "name": "adoptpet",
+  "version": "1.0.0",
+  "description": "intro to react",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hiyongrui/adoptPet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hiyongrui/adoptPet/issues"
+  },
+  "homepage": "https://github.com/hiyongrui/adoptPet#readme",
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  }
+}
