@@ -1,3 +1,6 @@
+import React from "react";
+import ReactDOM from "react-dom"; // or import {createRoot} also can, then at bottom no need ReactDom.createRoot()
+
 const Pet = (props) => {
   return React.createElement("div", {}, [
     React.createElement("h1", {}, props.name),
