@@ -27,7 +27,7 @@ const App = () => {
       React.createElement(Pet, {
         animal: "Cat",
         name: "Doink",
-        breed: "Breed",
+        breed: "Mixed",
       }),
     ]
   );

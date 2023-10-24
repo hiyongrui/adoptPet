@@ -4,6 +4,8 @@
   "description": "intro to react",
   "main": "index.js",
   "scripts": {
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
+    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +20,8 @@
   },
   "homepage": "https://github.com/hiyongrui/adoptPet#readme",
   "devDependencies": {
+    "eslint": "^8.24.0",
+    "eslint-config-prettier": "^8.5.0",
     "prettier": "^2.7.1"
   }
 }
