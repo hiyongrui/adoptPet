@@ -1,13 +1,6 @@
 import React from "react";
-import ReactDOM from "react-dom"; // or import {createRoot} also can, then at bottom no need ReactDom.createRoot()
-
-const Pet = (props) => {
-  return React.createElement("div", {}, [
-    React.createElement("h1", {}, props.name),
-    React.createElement("h2", {}, props.animal),
-    React.createElement("h2", {}, props.breed),
-  ]);
-}; //Pet rubber stamp function, stamp it 3 time below
+import { createRoot } from "react-dom"; // or import ReactDOM, then ReactDOM.createRoot() below
+import Pet from "./Pet";
 
 // one-way data flow, from parent App to child Pet
 
@@ -37,5 +30,5 @@ const App = () => {
 };
 
 const container = document.getElementById("root");
-const root = ReactDOM.createRoot(container);
+const root = createRoot(container);
 root.render(React.createElement(App));
