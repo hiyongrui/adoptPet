@@ -1,20 +1,32 @@
 import { createRoot } from "react-dom/client"; // or import ReactDOM, then ReactDOM.createRoot() below
 import { Link, BrowserRouter, Routes, Route } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import SearchParams from "./SearchParams";
 import Details from "./Details";
 
 // one-way data flow, from parent App to child Pet
 
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: Infinity, // 1000 * 60 * 10 = 10 minutes
+      cacheTime: Infinity,
+    },
+  },
+});
+
 const App = () => {
   return (
     <BrowserRouter>
-      <header>
-        <Link to="/"> Adopt Me! </Link>
-      </header>
-      <Routes>
-        <Route path="/details/:id" element={<Details />} />
-        <Route path="/" element={<SearchParams />} />
-      </Routes>
+      <QueryClientProvider client={queryClient}>
+        <header>
+          <Link to="/"> Adopt Me! </Link>
+        </header>
+        <Routes>
+          <Route path="/details/:id" element={<Details />} />
+          <Route path="/" element={<SearchParams />} />
+        </Routes>
+      </QueryClientProvider>
     </BrowserRouter>
   );
 };
