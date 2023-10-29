@@ -1,14 +1,12 @@
-import { createRoot } from "react-dom"; // or import ReactDOM, then ReactDOM.createRoot() below
-import Pet from "./Pet";
+import { createRoot } from "react-dom/client"; // or import ReactDOM, then ReactDOM.createRoot() below
+import SearchParams from "./SearchParams";
 
 // one-way data flow, from parent App to child Pet
 
 const App = () => {
-  <div>
+  return <div>
     <h1>Adopt Me!</h1>
-    <Pet name="Luna" animal="Dog" breed="Havanese" />
-    <Pet name="Pepper" animal="bird" breed="Cockatiel" />
-    <Pet name="Doink" animal="cat" breed="Mixed" />
+    <SearchParams />
   </div>
 };
 
