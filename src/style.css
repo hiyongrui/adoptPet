@@ -2,3 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+/* @layer base {
+  body {
+    font-family: 'Courier New', Courier, monospace;
+  }
+} */
+
+@layer components {
+  .search-input {
+    @apply w-60 mb-5 block;
+  }
+}
+
+@layer utilities {
+  .grayed-out-disabled {
+    @apply disabled:opacity-20;
+  }
+}
