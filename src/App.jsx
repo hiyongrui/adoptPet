@@ -19,7 +19,7 @@ const queryClient = new QueryClient({
 });
 
 const App = () => {
-  const adoptedPet = useState(null);
+  const adoptedPet = useState(null); // adoptedPet is whole hook as compared to const [theme, setTheme] = useState('darkmode');
   return (
     <BrowserRouter>
       <QueryClientProvider client={queryClient}>
