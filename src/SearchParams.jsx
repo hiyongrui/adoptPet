@@ -12,8 +12,8 @@ const SearchParams = () => {
   const [requestParams, setRequestParams] = useState({
     location: "",
     animal: "",
-    breed: ""
-  })
+    breed: "",
+  });
   const [animal, setAnimal] = useState("");
   const [breeds] = useBreedList(animal);
 
@@ -23,34 +23,29 @@ const SearchParams = () => {
   const [adoptedPet] = useContext(AdoptedPetContext); // [state, setState]
 
   return (
-    <div className="search-params">
-      <form onSubmit={e => {
-        e.preventDefault();
-        const formData = new FormData(e.target); //browser api
-        const obj = {
-          location: formData.get("location") ?? "",
-          animal: formData.get("animal") ?? "",
-          breed: formData.get("breed") ?? ""
-        }
-        setRequestParams(obj);
-      }}>
-
-        {
-          adoptedPet ?
-          (
-            <div className="pet image-container">
-              <img src={adoptedPet.images[0]} alt={adoptedPet.name} />
-            </div>
-          ) : null
-        }
+    <div className="my-0 mx-auto w-11/12">
+      <form
+        className="p-10 mb-10 rounded-lg bg-gray-200 shadow-lg flex flex-col justify-center items-center"
+        onSubmit={(e) => {
+          e.preventDefault();
+          const formData = new FormData(e.target); //browser api
+          const obj = {
+            location: formData.get("location") ?? "",
+            animal: formData.get("animal") ?? "",
+            breed: formData.get("breed") ?? "",
+          };
+          setRequestParams(obj);
+        }}
+      >
+        {adoptedPet ? (
+          <div className="pet image-container">
+            <img src={adoptedPet.images[0]} alt={adoptedPet.name} />
+          </div>
+        ) : null}
 
         <label htmlFor="location">
           Location
-          <input
-            name="location"
-            id="location"
-            placeholder="Location"
-          />
+          <input name="location" id="location" placeholder="Location" />
         </label>
 
         <label htmlFor="animal">
@@ -70,14 +65,10 @@ const SearchParams = () => {
             ))}
           </select>
         </label>
-        
+
         <label htmlFor="breed">
           Breed
-          <select
-            id="breed"
-            disabled={breeds.length === 0}
-            name="breed"
-          >
+          <select id="breed" disabled={breeds.length === 0} name="breed">
             <option />
             {breeds.map((breed) => (
               <option key={breed} value={breed}>
